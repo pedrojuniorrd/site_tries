@@ -1,5 +1,3 @@
-// src/components/HeroSlideshow.tsx
-
 import React from 'react';
 import Image from 'next/image';
 
@@ -21,14 +19,18 @@ const HeroSlideshow: React.FC = () => {
           alt={`Slide de Projeto ${index + 1}`}
           layout="fill"
           objectFit="cover"
-          priority={index === 0} // Carrega a primeira imagem com prioridade
+          priority={index === 0}
           className={`absolute inset-0 z-0 opacity-0 animate-zoom-out`}
-          style={{ animationDelay: `${index * 8}s` }} // Tempo entre as transições
+          style={{ animationDelay: `${index * 8}s` }}
         />
       ))}
-      <div className="absolute inset-0 bg-black/50 z-10 flex flex-col items-center justify-center text-center p-8">
-        <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-playfair-display font-light mb-4 leading-tight">
-          Arquitetura que Acolhe
+      <div className="absolute inset-0 z-10 flex flex-col items-start justify-center text-left p-8 lg:p-16 bg-black/50">
+        <h1 className="text-white text-7xl md:text-8xl lg:text-9xl font-dm-serif-display font-light leading-tight">
+          <span className="slide-in-initial-state animate-slide-in-right-1">Triés</span>
+          <br/>
+          <span className="slide-in-initial-state animate-slide-in-right-2">Arquitetura</span>
+          <br/>
+          {/* <span className="slide-in-initial-state animate-slide-in-right-3">Arquitetura</span> */}
         </h1>
       </div>
     </div>

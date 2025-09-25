@@ -1,40 +1,53 @@
+// src/components/AnimatedSection.tsx
 'use client';
 
-import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect, useRef, useState, ReactNode } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 interface AnimatedSectionProps {
-  children: React.ReactNode;
-  delay?: number;
+    children: ReactNode;
+    delay?: number;
+    animationType?: 'fade-in' | 'slide-up' | 'slide-left' | 'slide-right';
 }
 
-const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, delay = 0.2 }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, delay = 0, animationType = 'fade-in' }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
+    const [animationClass, setAnimationClass] = useState('');
 
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: delay, ease: "easeOut" } }
-      }}
-    >
-      {children}
-    </motion.div>
-  );
+    useEffect(() => {
+        if (inView) {
+            let baseClass = '';
+            switch (animationType) {
+                case 'slide-up':
+                    baseClass = 'animate-slide-up';
+                    break;
+                case 'slide-left':
+                    baseClass = 'animate-slide-left';
+                    break;
+                case 'slide-right':
+                    baseClass = 'animate-slide-right';
+                    break;
+                case 'fade-in':
+                default:
+                    baseClass = 'animate-fade-in';
+            }
+            setAnimationClass(baseClass);
+        }
+    }, [inView, animationType]);
+
+    const delayStyle = {
+        animationDelay: `${delay}s`,
+    };
+
+    return (
+        <div ref={ref} className={`opacity-0 ${inView ? animationClass : ''}`} style={delayStyle}>
+            {children}
+        </div>
+    );
 };
 
 export default AnimatedSection;

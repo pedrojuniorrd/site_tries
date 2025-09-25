@@ -12,14 +12,14 @@ const Home: React.FC = () => {
       <HeroSlideshow />
 
       {/* Seção de Projetos em Destaque */}
-      <section id="projetos" className="py-24 text-center max-w-7xl mx-auto px-4">
-        <AnimatedSection>
-          <h2 className="text-5xl font-playfair-display mb-12">Projetos em Destaque</h2>
+      <section id="projetos" className="projects-bg-image py-24 text-center max-w-7xl mx-auto px-4">
+        <AnimatedSection animationType="slide-up">
+          <h2 className="text-5xl font-playfair-display mb-12">Projetos</h2>
         </AnimatedSection>
-        <AnimatedSection delay={0.2}>
-          <ProjectsCarousel /> {/* Use o carrossel aqui */}
+        <AnimatedSection delay={0.2} animationType="slide-up">
+          <ProjectsCarousel />
         </AnimatedSection>
-        <AnimatedSection delay={0.4}>
+        <AnimatedSection delay={0.4} animationType="slide-up">
           <div className="mt-16">
             <Link href="#" className="inline-block px-10 py-5 text-zinc-900 border border-zinc-900 hover:bg-zinc-900 hover:text-white transition-all duration-300 rounded-full text-lg font-lato font-medium">
               Ver Todos os Projetos
@@ -29,16 +29,16 @@ const Home: React.FC = () => {
       </section>
 
       {/* Seção Sobre a Triés Arquitetura */}
-      <section id="sobre" className="bg-gray-50 py-24">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <AnimatedSection>
-            <h2 className="text-5xl font-playfair-display mb-8">Sobre a Triés Arquitetura</h2>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
+      <section id="sobre" className="about-bg-texture py-24">
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <AnimatedSection animationType="slide-left">
+            <h2 className="text-5xl font-playfair-display mb-8 text-white">Sobre a Triés Arquitetura</h2>
+            <p className="text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto">
               A Triés Arquitetura é um escritório fundado por **Maria Eduarda**, **Kianny Dutra** e **Sabrina**. Juntas, elas combinam diferentes visões para criar espaços que equilibram estética, funcionalidade e bem-estar.
             </p>
           </AnimatedSection>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <AnimatedSection delay={0.4}>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+            <AnimatedSection delay={0.4} animationType="slide-up">
               <div className="text-center">
                 <Image
                   src="/arquitetas/maria_eduarda.png"
@@ -48,10 +48,10 @@ const Home: React.FC = () => {
                   className="rounded-full mx-auto mb-4 shadow-lg"
                 />
                 <h3 className="text-xl font-bold">Maria Eduarda</h3>
-                <p className="text-gray-600">Bom dia</p>
+                <p className="text-gray-200">Bom dia</p>
               </div>
             </AnimatedSection>
-            <AnimatedSection delay={0.6}>
+            <AnimatedSection delay={0.6} animationType="slide-up">
               <div className="text-center">
                 <Image
                   src="/arquitetas/kianny_dutra.png"
@@ -61,10 +61,10 @@ const Home: React.FC = () => {
                   className="rounded-full mx-auto mb-4 shadow-lg"
                 />
                 <h3 className="text-xl font-bold">Kianny Dutra</h3>
-                <p className="text-gray-600">Boa tarde</p>
+                <p className="text-gray-200">Boa tarde</p>
               </div>
             </AnimatedSection>
-            <AnimatedSection delay={0.8}>
+            <AnimatedSection delay={0.8} animationType="slide-up">
               <div className="text-center">
                 <Image
                   src="/arquitetas/sabrina_moura.png"
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
                   className="rounded-full mx-auto mb-4 shadow-lg"
                 />
                 <h3 className="text-xl font-bold">Sabrina</h3>
-                <p className="text-gray-600">Boa noite</p>
+                <p className="text-gray-200">Boa noite</p>
               </div>
             </AnimatedSection>
           </div>
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
 
       {/* Seção de Contato - FORMULÁRIO COM ANIMAÇÃO POR CAMPO */}
       <section id="contato" className="py-24 max-w-4xl mx-auto px-4 text-center">
-        <AnimatedSection>
+        <AnimatedSection animationType="slide-up">
           <h2 className="text-4xl font-light mb-8">Fale Conosco</h2>
           <p className="text-lg text-gray-600 mb-8">
             Entre em contato para agendar uma consultoria ou tirar dúvidas.
@@ -93,7 +93,6 @@ const Home: React.FC = () => {
           <ContactForm />
         </div>
       </section>
-
     </>
   );
 };
