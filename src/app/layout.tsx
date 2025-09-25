@@ -18,7 +18,7 @@ const lato = Lato({
 });
 
 export const metadata = {
-  title: 'Portfólio de Arquitetura',
+  title: 'Triés Arquitetura',
   description: 'Projetos de arquitetura e design de interiores.',
 };
 

@@ -1,4 +1,5 @@
-'use client';
+'use client'; // Adicione esta linha
+
 import Link from 'next/link';
 import React, { useState } from 'react';
 

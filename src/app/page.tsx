@@ -5,7 +5,6 @@ import HeroSlideshow from '../components/HeroSlideshow';
 import ContactForm from '../components/ContactForm';
 import AnimatedSection from '../components/AnimatedSection';
 import ProjectsCarousel from '../components/ProjectsCarousel'; // Importe o carrossel
-import BackgroundMusic from '../components/BackgroundMusic';
 
 const Home: React.FC = () => {
   return (
