@@ -27,7 +27,7 @@ const HeroSlideshow: React.FC = () => {
         />
       ))}
       <div className="absolute inset-0 bg-black/50 z-10 flex flex-col items-center justify-center text-center p-8">
-        <h1 className="text-white text-7xl md:text-8xl lg:text-9xl font-playfair-display font-light mb-4 leading-tight">
+        <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-playfair-display font-light mb-4 leading-tight">
           Arquitetura que Acolhe
         </h1>
       </div>

@@ -1,5 +1,5 @@
+// src/components/ProjectsCarousel.tsx
 'use client';
-
 import React, { useState } from 'react';
 import Slider, { CustomArrowProps } from 'react-slick';
 import Image from 'next/image';
@@ -13,28 +13,28 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css';
 const NextArrow = (props: CustomArrowProps) => {
     const { className, onClick } = props;
     return (
-        <div 
-          className={`${className} custom-arrow next-arrow z-10 absolute top-1/2 right-4 -translate-y-1/2`} 
-          onClick={onClick} 
-        >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" />
-            </svg>
-        </div>
+      <div 
+        className={`${className} custom-arrow next-arrow z-10 absolute top-1/2 right-4 -translate-y-1/2`} 
+        onClick={onClick} 
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" />
+        </svg>
+      </div>
     );
 };
 
 const PrevArrow = (props: CustomArrowProps) => {
     const { className, onClick } = props;
     return (
-        <div 
-          className={`${className} custom-arrow prev-arrow z-10 absolute top-1/2 left-4 -translate-y-1/2`} 
-          onClick={onClick} 
-        >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M9.707 4.293a1 1 0 010 1.414L5.414 10l4.293 4.293a1 1 0 01-1.414 1.414l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-        </div>
+      <div 
+        className={`${className} custom-arrow prev-arrow z-10 absolute top-1/2 left-4 -translate-y-1/2`} 
+        onClick={onClick} 
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M9.707 4.293a1 1 0 010 1.414L5.414 10l4.293 4.293a1 1 0 01-1.414 1.414l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 0z" clipRule="evenodd" />
+        </svg>
+      </div>
     );
 };
 
