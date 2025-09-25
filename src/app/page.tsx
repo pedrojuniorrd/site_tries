@@ -42,7 +42,7 @@ const Home: React.FC = () => {
             <AnimatedSection delay={0.4}>
               <div className="text-center">
                 <Image
-                  src="/arquitetas/eduarda.png"
+                  src="/arquitetas/maria_eduarda.png"
                   alt="Foto de Maria Eduarda"
                   width={160}
                   height={160}
@@ -55,7 +55,7 @@ const Home: React.FC = () => {
             <AnimatedSection delay={0.6}>
               <div className="text-center">
                 <Image
-                  src="/arquitetas/kianny.png"
+                  src="/arquitetas/kianny_dutra.png"
                   alt="Foto de Kianny Dutra"
                   width={160}
                   height={160}
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
             <AnimatedSection delay={0.8}>
               <div className="text-center">
                 <Image
-                  src="/arquitetas/sabrina.png"
+                  src="/arquitetas/sabrina_moura.png"
                   alt="Foto de Sabrina"
                   width={160}
                   height={160}
@@ -94,7 +94,7 @@ const Home: React.FC = () => {
           <ContactForm />
         </div>
       </section>
-      <BackgroundMusic /> {/* Adicione aqui */}
+
     </>
   );
 };
