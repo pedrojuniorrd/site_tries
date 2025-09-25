@@ -1,9 +1,11 @@
-@import "tailwindcss";
 /* src/app/globals.css */
+@import "tailwindcss";
+
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
 @import 'yet-another-react-lightbox/styles.css';
 @import 'yet-another-react-lightbox/plugins/thumbnails.css';
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -22,10 +24,6 @@
     --foreground: #ededed;
   }
 }
-
-/* * Coloque suas novas regras aqui no final.
- * Elas vão sobrescrever o que for necessário, sem quebrar o sistema.
- */
 
 /* Variáveis de fonte para as fontes importadas no layout.tsx */
 :root {
@@ -64,4 +62,27 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* NOVAS REGRAS PARA O SLIDESHOW */
+@keyframes zoom-out-fade {
+  0% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.animate-zoom-out {
+  animation: zoom-out-fade 24s infinite;
 }

@@ -40,7 +40,7 @@ const PrevArrow = (props: CustomArrowProps) => {
 
 const ProjectsCarousel: React.FC = () => {
     const [open, setOpen] = useState(false);
-    const [projectImages, setProjectImages] = useState([]);
+    const [projectImages, setProjectImages] = useState<{ src: string }[]>([]);
     
     const settings = {
         dots: true,

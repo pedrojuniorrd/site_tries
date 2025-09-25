@@ -1,16 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
-import Hero from '../components/Hero';
-import { projects } from '../../data/projects';
 import Link from 'next/link';
+import HeroSlideshow from '../components/HeroSlideshow';
 import ContactForm from '../components/ContactForm';
 import AnimatedSection from '../components/AnimatedSection';
 import ProjectsCarousel from '../components/ProjectsCarousel'; // Importe o carrossel
+import BackgroundMusic from '../components/BackgroundMusic';
 
 const Home: React.FC = () => {
   return (
     <>
-      <Hero />
+      <HeroSlideshow />
 
       {/* Seção de Projetos em Destaque */}
       <section id="projetos" className="py-24 text-center max-w-7xl mx-auto px-4">
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         </AnimatedSection>
         <AnimatedSection delay={0.4}>
           <div className="mt-16">
-            <Link href="/projetos" className="inline-block px-10 py-5 text-zinc-900 border border-zinc-900 hover:bg-zinc-900 hover:text-white transition-all duration-300 rounded-full text-lg font-lato font-medium">
+            <Link href="#" className="inline-block px-10 py-5 text-zinc-900 border border-zinc-900 hover:bg-zinc-900 hover:text-white transition-all duration-300 rounded-full text-lg font-lato font-medium">
               Ver Todos os Projetos
             </Link>
           </div>
@@ -42,40 +42,40 @@ const Home: React.FC = () => {
             <AnimatedSection delay={0.4}>
               <div className="text-center">
                 <Image
-                  src="/maria-eduarda.jpg"
+                  src="/arquitetas/eduarda.png"
                   alt="Foto de Maria Eduarda"
                   width={160}
                   height={160}
                   className="rounded-full mx-auto mb-4 shadow-lg"
                 />
                 <h3 className="text-xl font-bold">Maria Eduarda</h3>
-                <p className="text-gray-600">Descrição sobre a Maria Eduarda</p>
+                <p className="text-gray-600">Bom dia</p>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.6}>
               <div className="text-center">
                 <Image
-                  src="/kianny-dutra.jpg"
+                  src="/arquitetas/kianny.png"
                   alt="Foto de Kianny Dutra"
                   width={160}
                   height={160}
                   className="rounded-full mx-auto mb-4 shadow-lg"
                 />
                 <h3 className="text-xl font-bold">Kianny Dutra</h3>
-                <p className="text-gray-600">Descrição sobre a Kianny Dutra</p>
+                <p className="text-gray-600">Boa tarde</p>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.8}>
               <div className="text-center">
                 <Image
-                  src="/sabrina.jpg"
+                  src="/arquitetas/sabrina.png"
                   alt="Foto de Sabrina"
                   width={160}
                   height={160}
                   className="rounded-full mx-auto mb-4 shadow-lg"
                 />
                 <h3 className="text-xl font-bold">Sabrina</h3>
-                <p className="text-gray-600">Descrição sobre a Sabrina</p>
+                <p className="text-gray-600">Boa noite</p>
               </div>
             </AnimatedSection>
           </div>
@@ -94,6 +94,7 @@ const Home: React.FC = () => {
           <ContactForm />
         </div>
       </section>
+      <BackgroundMusic /> {/* Adicione aqui */}
     </>
   );
 };
