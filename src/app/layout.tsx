@@ -1,20 +1,14 @@
 import './globals.css';
 import React from 'react';
-import { DM_Serif_Display, Inter } from 'next/font/google'; // Importe as novas fontes
+import { Montserrat } from 'next/font/google'; // Importe a nova fonte Montserrat
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-// Configure as novas fontes
-const dmSerifDisplay = DM_Serif_Display({
-  subsets: ['latin'],
-  weight: ['400'], 
-  variable: '--font-dm-serif-display', // Define a variável CSS
-});
-
-const inter = Inter({
+// Configure a fonte Montserrat
+const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-inter', // Define a variável CSS
+  variable: '--font-montserrat', // Define a variável CSS
 });
 
 export const metadata = {
@@ -28,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // Adicione a classe 'scroll-smooth' para ativar a rolagem suave
-    <html lang="pt-BR" className={`${dmSerifDisplay.variable} ${inter.variable} scroll-smooth`}>
+    // Aplica a classe de variável da Montserrat
+    <html lang="pt-BR" className={`${montserrat.variable} scroll-smooth`}>
       <body>
         <Header />
         <main className="pt-[84px]">

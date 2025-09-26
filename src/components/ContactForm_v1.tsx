@@ -2,22 +2,71 @@
 
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
-import AnimatedSection from './AnimatedSection'; 
+import AnimatedSection from './AnimatedSection'; // Supondo que você tem esse componente
 
 const ContactForm: React.FC = () => {
-  // O status ainda é mantido para evitar erros na função handleSubmit, mas não é usado para desabilitar
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  // A função handleSubmit ainda existe, mas o botão nunca permitirá o clique
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    // ... lógica de envio, que nunca será alcançada se o botão estiver desabilitado ...
     event.preventDefault();
     setStatus('submitting');
-    // ...
-  };
+    
+    const form = event.currentTarget;
+    const data = new FormData(form);
 
-  // Variável para desabilitar todo o formulário (MUDANÇA AQUI)
-  const IS_DISABLED = true; // Defina como TRUE para desabilitar tudo
+    try {
+      const response = await fetch('https://formspree.io/f/xkgqgzze', {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+        Swal.fire({ 
+          icon: 'success',
+          title: 'Mensagem Enviada!',
+          text: 'Obrigado por entrar em contato. Responderemos em breve!',
+          showConfirmButton: false,
+          timer: 3000,
+          customClass: {
+            container: 'font-montserrat', 
+            title: 'font-montserrat font-semibold', 
+          }
+        });
+      } else {
+        setStatus('error');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.',
+          showConfirmButton: false,
+          timer: 3000,
+          customClass: {
+            container: 'font-montserrat',
+            title: 'font-montserrat font-semibold',
+          }
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+      Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.',
+          showConfirmButton: false,
+          timer: 3000,
+          customClass: {
+            container: 'font-montserrat',
+            title: 'font-montserrat font-semibold',
+          }
+        });
+    }
+  };
 
   return (
     <section id="contato" className="py-20 bg-neutral-50 font-montserrat">
@@ -33,10 +82,8 @@ const ContactForm: React.FC = () => {
             </div>
         </AnimatedSection>
         
-        {/* Formulário */}
-        {/* Você também pode adicionar a classe 'opacity-50' aqui para um efeito visual de desabilitado em todo o formulário. */}
-        <form onSubmit={handleSubmit} className={`space-y-6 w-full max-w-4xl mx-auto p-0 ${IS_DISABLED ? 'opacity-50' : ''}`}>
-            
+        {/* Formulário com o estilo do seu exemplo */}
+        <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-4xl mx-auto p-0">
             {/* Campos Nome e Email em duas colunas */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <AnimatedSection delay={0.2}>
@@ -47,8 +94,7 @@ const ContactForm: React.FC = () => {
                             id="name"
                             name="name"
                             required
-                            disabled={IS_DISABLED} // AQUI: Desabilitado permanentemente
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-800 focus:border-gray-800 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-800 focus:border-gray-800"
                         />
                     </div>
                 </AnimatedSection>
@@ -60,14 +106,13 @@ const ContactForm: React.FC = () => {
                             id="email"
                             name="email"
                             required
-                            disabled={IS_DISABLED} // AQUI: Desabilitado permanentemente
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-800 focus:border-gray-800 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-800 focus:border-gray-800"
                         />
                     </div>
                 </AnimatedSection>
             </div>
             
-            {/* Campo Assunto */}
+            {/* Campo Assunto (mantido do exemplo anterior) */}
             <AnimatedSection delay={0.4}>
                 <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700">Assunto</label>
@@ -75,8 +120,7 @@ const ContactForm: React.FC = () => {
                         type="text"
                         id="subject"
                         name="subject"
-                        disabled={IS_DISABLED} // AQUI: Desabilitado permanentemente
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-800 focus:border-gray-800 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-800 focus:border-gray-800"
                     />
                 </div>
             </AnimatedSection>
@@ -90,28 +134,22 @@ const ContactForm: React.FC = () => {
                         name="message"
                         rows={5}
                         required
-                        disabled={IS_DISABLED} // AQUI: Desabilitado permanentemente
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-800 focus:border-gray-800 resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-800 focus:border-gray-800 resize-none"
                     ></textarea>
                 </div>
             </AnimatedSection>
 
-            {/* Botão de Envio */}
+            {/* Botão de Envio com o novo estilo */}
             <AnimatedSection delay={0.6}>
                 <div>
                     <button
                         type="submit"
-                        disabled={IS_DISABLED} // AQUI: Desabilitado permanentemente
+                        disabled={status === 'submitting'}
                         className="w-full flex justify-center py-3 px-4 border border-gray-800 rounded-none text-sm font-light tracking-wider text-gray-800 hover:bg-gray-800 hover:text-white transition duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {'Em Breve'} {/* Texto alterado para feedback */}
+                        {status === 'submitting' ? 'ENVIANDO...' : 'ENVIAR MENSAGEM'}
                     </button>
                 </div>
-                {IS_DISABLED && (
-                    <p className="text-center text-sm text-gray-600 mt-4">
-                        *O formulário de contato está temporariamente desabilitado para manutenção.
-                    </p>
-                )}
             </AnimatedSection>
         </form>
       </div>

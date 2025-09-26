@@ -1,4 +1,4 @@
-'use client'; // Adicione esta linha
+'use client';
 
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -11,11 +11,11 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="w-full z-10 p-6 bg-white bg-opacity-80 backdrop-blur-sm shadow-sm">
+    <header className="fixed w-full z-50 p-6 bg-white bg-opacity-80 backdrop-blur-sm shadow-sm">
       <nav className="flex justify-between items-center max-w-7xl mx-auto">
         <div className="text-xl font-bold tracking-wide">
           <Link href="/">
-            <h1 className="text-3xl font-dm-serif-display font-light text-zinc-900 tracking-wide">
+            <h1 className="text-3xl font-montserrat font-light text-zinc-900 tracking-wide header-stroke">
               Triés Arquitetura
             </h1>
           </Link>
@@ -31,7 +31,8 @@ const Header: React.FC = () => {
         </div>
 
         {/* Links de navegação para desktop */}
-        <ul className="hidden md:flex space-x-6 font-inter text-gray-700 font-medium">
+        <ul className="hidden md:flex space-x-6 font-montserrat text-gray-700">
+          <li><Link href="#home" className="hover:text-black transition-colors duration-300">Home</Link></li>
           <li><Link href="#projetos" className="hover:text-black transition-colors duration-300">Projetos</Link></li>
           <li><Link href="#sobre" className="hover:text-black transition-colors duration-300">Sobre</Link></li>
           <li><Link href="#contato" className="hover:text-black transition-colors duration-300">Contato</Link></li>
@@ -40,7 +41,8 @@ const Header: React.FC = () => {
 
       {/* Menu mobile (aparece quando isOpen é true) */}
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
-        <ul className="flex flex-col items-center space-y-4 pt-4 pb-2 font-inter text-gray-700 font-medium">
+        <ul className="flex flex-col items-center space-y-4 pt-4 pb-2 font-montserrat text-gray-700 font-medium">
+          <li><Link href="#home" onClick={toggleMenu} className="hover:text-black transition-colors duration-300">Home</Link></li>
           <li><Link href="#projetos" onClick={toggleMenu} className="hover:text-black transition-colors duration-300">Projetos</Link></li>
           <li><Link href="#sobre" onClick={toggleMenu} className="hover:text-black transition-colors duration-300">Sobre</Link></li>
           <li><Link href="#contato" onClick={toggleMenu} className="hover:text-black transition-colors duration-300">Contato</Link></li>
