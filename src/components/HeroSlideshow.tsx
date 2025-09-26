@@ -8,7 +8,7 @@ const heroImages = [
   '/slides/1.png',
   '/slides/2.png',
   '/slides/3.png',
-  '/slides/4.png',
+  '/slides/4.jpg',
   '/slides/5.png',
 ];
 

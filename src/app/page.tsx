@@ -39,7 +39,8 @@ const Home: React.FC = () => {
           <AnimatedSection animationType="slide-left">
             <h2 className="text-5xl font-playfair-display font-light mb-8 text-zinc-800">Sobre a Triés Arquitetatura</h2>
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto font-montserrat font-light">
-              A Triés Arquitetura é um escritório fundado por **Maria Eduarda**, **Kianny Dutra** e **Sabrina**. Juntas, elas combinam diferentes visões para criar espaços que equilibram estética, funcionalidade e bem-estar.
+              O Triés Arquitetura é composto por uma equipe de arquitetas, que uniram suas experiências e visões para criar projetos que unem estética, funcionalidade e propósito. Atuamos no desenvolvimento de projetos residenciais, comerciais e corporativos, sempre com foco em entender as necessidades de cada cliente e transformar espaços em ambientes únicos.
+ Acreditamos no poder do design para valorizar marcas, otimizar experiências e criar ambientes que transmitem bem-estar e conexão. Nossa abordagem é guiada pela filosofia de que a arquitetura deve ir além da estética, focando no bem-estar e na conexão entre as pessoas e o ambiente.
             </p>
           </AnimatedSection>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-zinc-800">
@@ -56,7 +57,7 @@ const Home: React.FC = () => {
                   />
                 </div>
                 <h3 className="text-xl font-montserrat font-normal">Maria Eduarda</h3>
-                <p className="text-gray-500 font-montserrat font-light">Bom dia</p>
+                <p className="text-gray-500 font-montserrat font-light">Especialista em Projeto Executivo de Arquitetura e Design de Interiores</p>
               </div>
             </AnimatedSection>
 
@@ -72,7 +73,7 @@ const Home: React.FC = () => {
                   />
                 </div>
                 <h3 className="text-xl font-montserrat font-normal">Kianny Dutra</h3>
-                <p className="text-gray-500 font-montserrat font-light">Boa tarde</p>
+                <p className="text-gray-500 font-montserrat font-light">Especialista em Design de Interiores, Iluminação e Produção Criativa</p>
               </div>
             </AnimatedSection>
 
@@ -88,7 +89,7 @@ const Home: React.FC = () => {
                   />
                 </div>
                 <h3 className="text-xl font-montserrat font-normal">Sabrina</h3>
-                <p className="text-gray-500 font-montserrat font-light">Boa noite</p>
+                <p className="text-gray-500 font-montserrat font-light">Especialista em Projetos Arquitetônicos e Luminotécnico</p>
               </div>
             </AnimatedSection>
 

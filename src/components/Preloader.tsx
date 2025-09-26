@@ -21,7 +21,7 @@ const Preloader: React.FC<PreloaderProps> = ({ loading }) => {
         <div className="h-16 w-16 rounded-full border border-gray-300"></div>
       </div>
       <p className="mt-8 text-lg font-light text-gray-600 tracking-widest animate-fade-in-slow">
-        Seja bem-vindo à Triés Arquitetura
+        Seja bem-vindo ao Triés Arquitetura
       </p>
     </div>
   );

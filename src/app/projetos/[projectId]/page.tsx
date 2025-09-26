@@ -57,11 +57,11 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
         </div>
       </AnimatedSection>
       
-      <AnimatedSection delay={0.4}>
+      {/* <AnimatedSection delay={0.4}>
         <div className="max-w-4xl mx-auto px-4 text-center text-lg text-gray-700 leading-relaxed mb-12">
           <p>{project.description}</p>
         </div>
-      </AnimatedSection>
+      </AnimatedSection> */}
 
       <Lightbox
         open={open}

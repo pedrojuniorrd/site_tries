@@ -12,66 +12,84 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-    id: 'nonato',
-    name: 'Projeto Nonato',
+    id: 'paula',
+    name: 'Suíte Master Serenity',
     category: 'Residencial',
-    description: 'Um projeto de arquitetura residencial que une modernidade e conforto, com foco na iluminação natural e em espaços de convívio amplos e integrados.',
-    description_short: 'Modernidade e conforto unidos em um projeto residencial com espaços integrados.',
-    images: ['/projects/nonato/2.png', '/projects/nonato/3.png', '/projects/nonato/4.png'],
-    thumbnail: '/projects/nonato/thumbnail.png', // Exemplo
+    description: '',
+    description_short: '',
+    images: ['/projects/serenity/1.png', '/projects/serenity/2.png', '/projects/serenity/3.png','/projects/serenity/4.png','/projects/serenity/5.png'],
+    thumbnail: '/projects/serenity/5.png', // Exemplo
   },
   {
-    id: 'residencia-alpha',
-    name: 'Residência Alpha',
+    id: 'noelia',
+    name: 'Sala 202',
     category: 'Residencial',
-    description: 'Um projeto que equilibra o minimalismo com o calor da madeira, criando um refúgio urbano para a família. As linhas retas e os grandes vãos de vidro conectam o interior com a natureza ao redor, promovendo a sensação de amplitude e leveza.',
-    description_short: 'Um refúgio urbano que une minimalismo e a beleza natural da madeira.',
-    images: ['/projects/residencia-alpha/1.jpg', '/projects/residencia-alpha/2.jpg', '/projects/residencia-alpha/3.jpg'],
-    thumbnail: '/projects/residencia-alpha/thumbnail.png', // Exemplo
+    description: '',
+    description_short: '',
+    images: ['/projects/sala_202/1.png', '/projects/sala_202/2.png', '/projects/sala_202/3.png','/projects/sala_202/4.png','/projects/sala_202/5.png'],
+    thumbnail: '/projects/sala_202/1.png', // Exemplo
   },
   {
-    id: 'clinica-bem-estar',
-    name: 'Clínica de Bem-Estar',
+    id: 'forquilha',
+    name: 'Armazém Forquilha',
     category: 'Comercial',
-    description: 'Espaços pensados para promover a calma e o relaxamento. A paleta de cores neutra e a luz natural são os destaques, criando um ambiente acolhedor e profissional para pacientes e terapeutas.',
-    description_short: 'Ambientes serenos e acolhedores, projetados para a calma e o relaxamento.',
-    images: ['/projects/clinica-bem-estar/1.jpg', '/projects/clinica-bem-estar/2.jpg', '/projects/clinica-bem-estar/3.jpg'],
-    thumbnail: '/projects/clinica-bem-estar/thumbnail.png', // Exemplo
+    description: '',
+    description_short: '',
+    images: ['/projects/armazem_forquilha/1.png', '/projects/armazem_forquilha/2.png', '/projects/armazem_forquilha/3.png','/projects/armazem_forquilha/4.png','/projects/armazem_forquilha/5.png','/projects/armazem_forquilha/6.png'],
+    thumbnail: '/projects/armazem_forquilha/1.png', // Exemplo
   },
   {
-    id: 'loft-urbano',
-    name: 'Loft Urbano',
+    id: 'carla_coelho',
+    name: 'Clínica Florescer',
     category: 'Interiores',
-    description: 'Um projeto de interiores que transforma um espaço pequeno em um ambiente funcional e moderno. O design inteligente, com móveis multifuncionais e cores vibrantes, otimiza cada metro quadrado sem abrir mão do estilo.',
-    description_short: 'Design inteligente e funcional que otimiza espaços pequenos com estilo.',
-    images: ['/projects/loft-urbano/1.jpg', '/projects/loft-urbano/2.jpg', '/projects/loft-urbano/3.jpg'],
-    thumbnail: '/projects/loft-urbano/thumbnail.png', // Exemplo
+    description: '',
+    description_short: '',
+    images: ['/projects/clinica_florescer/1.png', '/projects/clinica_florescer/2.png', '/projects/clinica_florescer/3.png','/projects/clinica_florescer/4.png','/projects/clinica_florescer/5.png','/projects/clinica_florescer/6.png'],
+    thumbnail: '/projects/clinica_florescer/3.png', // Exemplo
   },
   {
-    id: 'vila-das-palmeiras',
-    name: 'Vila das Palmeiras',
-    category: 'Residencial',
-    description: 'Uma residência familiar projetada com foco na integração social e no contato com a área externa. A piscina em formato orgânico e a área gourmet com churrasqueira são o coração da casa, perfeitos para receber amigos e familiares.',
-    description_short: 'Uma residência familiar focada na integração social e no lazer ao ar livre.',
-    images: ['/projects/vila-das-palmeiras/1.jpg', '/projects/vila-das-palmeiras/2.jpg', '/projects/vila-das-palmeiras/3.jpg'],
-    thumbnail: '/projects/vila-das-palmeiras/thumbnail.png', // Exemplo
-  },
-  {
-    id: 'restaurante-fusion',
-    name: 'Restaurante Fusion',
+    id: 'gelato',
+    name: 'Gelato Vila dos Lençóis',
     category: 'Comercial',
-    description: 'O design interior deste restaurante foi concebido para refletir a culinária que ele oferece: uma fusão de tradição e modernidade. Elementos rústicos como tijolos expostos se misturam a um mobiliário contemporâneo, criando uma atmosfera única.',
-    description_short: 'Design interior que une o rústico com o contemporâneo, criando uma atmosfera única.',
-    images: ['/projects/restaurante-fusion/1.jpg', '/projects/restaurante-fusion/2.jpg', '/projects/restaurante-fusion/3.jpg'],
-    thumbnail: '/projects/restaurante-fusion/thumbnail.png', // Exemplo
+    description: '',
+    description_short: '',
+    images: ['/projects/gelato/1.png', '/projects/gelato/2.png', '/projects/gelato/3.png','/projects/gelato/4.png','/projects/gelato/5.png'],
+    thumbnail: '/projects/gelato/5.png', // Exemplo
   },
   {
-    id: 'apartamento-cobertura',
-    name: 'Apartamento Cobertura',
+    id: 'quarto_infantil',
+    name: 'Suíte Rosé',
     category: 'Interiores',
-    description: 'Um projeto de interiores de alto padrão que prioriza vistas panorâmicas e conforto. A suíte master conta com uma banheira de hidromassagem e um sistema de automação completo para controle de luz e temperatura.',
-    description_short: 'Um projeto de interiores de alto padrão com foco em vistas panorâmicas e conforto.',
-    images: ['/projects/apartamento-cobertura/1.jpg', '/projects/apartamento-cobertura/2.jpg', '/projects/apartamento-cobertura/3.jpg'],
-    thumbnail: '/projects/apartamento-cobertura/thumbnail.png', // Exemplo
+    description: '',
+    description_short: '',
+    images: ['/projects/quarto_infantil/1.jpg', '/projects/quarto_infantil/2.jpg', '/projects/quarto_infantil/3.jpg','/projects/quarto_infantil/4.jpg','/projects/quarto_infantil/5.jpg'],
+    thumbnail: '/projects/quarto_infantil/2.jpg', // Exemplo
+  },
+  {
+    id: 'quarto_juvenil',
+    name: 'Suíte Neutra',
+    category: 'Interiores',
+    description: '',
+    description_short: '',
+    images: ['/projects/quarto_juvenil/1.png', '/projects/quarto_juvenil/2.png', '/projects/quarto_juvenil/3.png','/projects/quarto_juvenil/4.png','/projects/quarto_juvenil/5.png','/projects/quarto_juvenil/6.png','/projects/quarto_juvenil/.png'],
+    thumbnail: '/projects/quarto_juvenil/2.png', // Exemplo
+  },
+    {
+    id: 'quarto_juvenil',
+    name: 'Suíte ID',
+    category: 'Interiores',
+    description: '',
+    description_short: '',
+    images: ['/projects/quarto_juvenil/1.png', '/projects/quarto_juvenil/2.png', '/projects/quarto_juvenil/3.png','/projects/quarto_juvenil/4.png','/projects/quarto_juvenil/5.png','/projects/quarto_juvenil/6.png','/projects/quarto_juvenil/7.png'],
+    thumbnail: '/projects/quarto_juvenil/2.png', // Exemplo
+  },
+    {
+    id: 'keila',
+    name: 'Ap. 1103',
+    category: 'Interiores',
+    description: '',
+    description_short: '',
+    images: ['/projects/apartamento_1103/1.png', '/projects/apartamento_1103/2.png', '/projects/apartamento_1103/3.png','/projects/apartamento_1103/4.png','/projects/apartamento_1103/5.png','/projects/apartamento_1103/6.png','/projects/apartamento_1103/7.png','/projects/apartamento_1103/8.png','/projects/apartamento_1103/9.png'],
+    thumbnail: '/projects/apartamento_1103/2.png', // Exemplo
   }
 ];
