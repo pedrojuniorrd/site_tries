@@ -1,4 +1,4 @@
-// src/components/ProjectsCarousel.tsx
+
 'use client';
 import React, { useState } from 'react';
 import Slider, { CustomArrowProps } from 'react-slick';
@@ -9,7 +9,7 @@ import 'yet-another-react-lightbox/styles.css';
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
-// Componentes para as setas
+
 const NextArrow = (props: CustomArrowProps) => {
     const { className, onClick } = props;
     return (
@@ -56,7 +56,7 @@ const ProjectsCarousel: React.FC = () => {
         prevArrow: <PrevArrow />,
         responsive: [
             {
-                breakpoint: 200,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
