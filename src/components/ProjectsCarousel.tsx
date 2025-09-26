@@ -78,24 +78,27 @@ const ProjectsCarousel: React.FC = () => {
                 {featuredProjects.map((project) => (
                     <div key={project.id} className="p-4">
                         <div
-                            className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
+                            className="group cursor-pointer shadow-lg"
                             onClick={() => openModal(project.images)}
                         >
-                            <Image
-                                src={project.thumbnail}
-                                alt={project.name}
-                                width={600}
-                                height={400}
-                                className="w-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                            />
-                            {/* Ajustado para um escurecimento mais leve no hover */}
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 group-hover:bg-gradient-to-t from-black/50 via-black/20 to-transparent transition-all duration-500 flex flex-col items-start justify-end p-6">
-                                <h3 className="text-white text-2xl font-playfair-display opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-4 group-hover:translate-y-0">
-                                    {project.name}
-                                </h3>
-                                <p className="text-white text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-4 group-hover:translate-y-0 mt-2">
-                                    {project.description_short}
-                                </p>
+                            {/* Container com proporção fixa (4:3) e cantos arredondados */}
+                            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl">
+                                <Image
+                                    src={project.thumbnail}
+                                    alt={project.name}
+                                    fill // "fill" faz a imagem preencher o container pai
+                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                />
+                                {/* Overlay com informações do projeto */}
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 group-hover:bg-gradient-to-t from-black/50 via-black/20 to-transparent transition-all duration-500 flex flex-col items-start justify-end p-6">
+                                    <h3 className="text-white text-2xl font-playfair-display opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-4 group-hover:translate-y-0">
+                                        {project.name}
+                                    </h3>
+                                    <p className="text-white text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-4 group-hover:translate-y-0 mt-2">
+                                        {project.description_short}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
