@@ -59,18 +59,18 @@ const ProjectsCarousel: React.FC = () => {
         prevArrow: <PrevArrow />,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1024, // Para telas grandes (lg e md)
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                 }
             },
             {
-                breakpoint: 640,
+                breakpoint: 768, // Para telas médias (md) e menores
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 1, // Corrigido para mostrar 1 slide
                     slidesToScroll: 1,
-                    arrows: false
+                    arrows: false // Opcional: remover as setas no mobile
                 }
             }
         ]
@@ -101,7 +101,6 @@ const ProjectsCarousel: React.FC = () => {
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
-                                {/* LINHA CORRIGIDA ABAIXO */}
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-gradient-to-t from-black/60 to-transparent transition-all duration-500 flex flex-col items-start justify-end p-6">
                                     <h3 className="text-white text-2xl font-playfair-display opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-4 group-hover:translate-y-0">
                                         {project.name}

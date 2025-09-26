@@ -424,3 +424,14 @@ body {
   transform: scale(1.1);
   transition: transform 0.2s, background-color 0.2s;
 }
+
+/* CORREÇÃO PARA O CARROSSEL DE PROJETOS NO MOBILE */
+@media (max-width: 768px) {
+  .slick-slide {
+    width: 100% !important; /* Garante que cada slide ocupe todo o espaço */
+    display: block !important;
+  }
+  .slick-track {
+    display: flex !important; /* Mantém o alinhamento dos slides */
+  }
+}

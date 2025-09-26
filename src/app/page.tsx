@@ -36,10 +36,10 @@ const Home: React.FC = () => {
       <section id="sobre" className="about-bg-sketch py-24">
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <AnimatedSection animationType="slide-left">
-            <h2 className="text-5xl font-playfair-display font-light mb-8 text-zinc-800">Sobre a Triés Arquitetatura</h2>
+            <h2 className="text-5xl font-playfair-display font-light mb-8 text-zinc-800">Sobre a Triés Arquitetura</h2>
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto font-montserrat font-light">
-              O Triés Arquitetura é composto por uma equipe de arquitetas, que uniram suas experiências e visões para criar projetos que unem estética, funcionalidade e propósito. Atuamos no desenvolvimento de projetos residenciais, comerciais e corporativos, sempre com foco em entender as necessidades de cada cliente e transformar espaços em ambientes únicos.
- Acreditamos no poder do design para valorizar marcas, otimizar experiências e criar ambientes que transmitem bem-estar e conexão. Nossa abordagem é guiada pela filosofia de que a arquitetura deve ir além da estética, focando no bem-estar e na conexão entre as pessoas e o ambiente.
+              O Triés Arquitetura possui uma equipe composta por três arquitetas, que uniram suas experiências e visões para criar projetos que aliam  estética, funcionalidade e propósito. Atuamos no desenvolvimento de projetos residenciais, comerciais e corporativos, sempre com foco em entender as necessidades de cada cliente e transformar espaços em ambientes únicos.
+ Acreditamos no poder do design para valorizar marcas, otimizar experiências e criar espaços que transmitem bem-estar e conexão. Nossa abordagem é guiada pela filosofia de que a arquitetura deve ir além da estética, focando no bem-estar e na conexão entre as pessoas e o ambiente.
             </p>
           </AnimatedSection>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-zinc-800">
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-montserrat font-normal">Sabrina</h3>
+                <h3 className="text-xl font-montserrat font-normal">Sabrina Britto</h3>
                 <p className="text-gray-500 font-montserrat font-light">Especialista em Projetos Arquitetônicos e Luminotécnico</p>
               </div>
             </AnimatedSection>
