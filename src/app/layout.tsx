@@ -1,16 +1,16 @@
+// src/app/layout.tsx
 import './globals.css';
 import React from 'react';
-import { Montserrat } from 'next/font/google'; // Importe a nova fonte Montserrat
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { Montserrat } from 'next/font/google';
+import ClientWrapper from '../components/ClientWrapper'; // Importe o novo wrapper
 
-// Configure a fonte Montserrat
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-montserrat', // Define a variável CSS
+  variable: '--font-montserrat',
 });
 
+// Agora a metadata pode ser exportada sem problemas!
 export const metadata = {
   title: 'Triés Arquitetura',
   description: 'Projetos de arquitetura e design de interiores.',
@@ -22,14 +22,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // Aplica a classe de variável da Montserrat
     <html lang="pt-BR" className={`${montserrat.variable} scroll-smooth`}>
       <body>
-        <Header />
-        <main className="pt-[84px]">
+        <ClientWrapper>
           {children}
-        </main>
-        <Footer />
+        </ClientWrapper>
       </body>
     </html>
   );

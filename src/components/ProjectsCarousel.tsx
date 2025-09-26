@@ -1,4 +1,4 @@
-
+// src/components/ProjectsCarousel.tsx
 'use client';
 import React, { useState } from 'react';
 import Slider, { CustomArrowProps } from 'react-slick';
@@ -6,9 +6,11 @@ import Image from 'next/image';
 import { projects } from '../../data/projects';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
 const NextArrow = (props: CustomArrowProps) => {
     const { className, onClick } = props;
@@ -41,12 +43,12 @@ const PrevArrow = (props: CustomArrowProps) => {
 const ProjectsCarousel: React.FC = () => {
     const [open, setOpen] = useState(false);
     const [projectImages, setProjectImages] = useState<{ src: string }[]>([]);
+    const [photoIndex, setPhotoIndex] = useState(0);
 
     const settings = {
         dots: true,
-        arrows: true,
         infinite: true,
-        speed: 2000,
+        speed: 1500,
         autoplay: true,
         autoplaySpeed: 5000,
         slidesToShow: 3,
@@ -56,49 +58,57 @@ const ProjectsCarousel: React.FC = () => {
         prevArrow: <PrevArrow />,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1024,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                 }
             },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false
+                }
+            }
         ]
     };
 
     const featuredProjects = projects.slice(0, 6);
 
-    const openModal = (images: string[]) => {
+    const openModal = (images: string[], index: number) => {
         setProjectImages(images.map(src => ({ src })));
+        setPhotoIndex(index);
         setOpen(true);
     };
 
     return (
         <div className="w-full relative">
             <Slider {...settings}>
-                {featuredProjects.map((project) => (
+                {featuredProjects.map((project, projectIndex) => (
                     <div key={project.id} className="p-4">
                         <div
                             className="group cursor-pointer shadow-lg"
-                            onClick={() => openModal(project.images)}
+                            onClick={() => openModal(project.images, 0)}
                         >
-                            {/* Container com proporção fixa (4:3) e cantos arredondados */}
                             <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl">
                                 <Image
                                     src={project.thumbnail}
                                     alt={project.name}
-                                    fill // "fill" faz a imagem preencher o container pai
+                                    fill
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
-                                {/* Overlay com informações do projeto */}
-                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 group-hover:bg-gradient-to-t from-black/50 via-black/20 to-transparent transition-all duration-500 flex flex-col items-start justify-end p-6">
-                                    <h3 className="text-white text-2xl font-playfair-display opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-4 group-hover:translate-y-0">
-                                        {project.name}
-                                    </h3>
-                                    <p className="text-white text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-4 group-hover:translate-y-0 mt-2">
-                                        {project.description_short}
-                                    </p>
-                                </div>
+<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent flex flex-col items-start justify-end p-6 md:bg-black/0 md:group-hover:bg-black/20 md:group-hover:bg-gradient-to-t transition-all duration-500">
+  {/* No mobile (padrão) a opacidade é 100. No desktop (md:), começa em 0 e aparece no hover */}
+  <h3 className="text-white text-2xl font-playfair-display md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 md:-translate-y-4 md:group-hover:translate-y-0">
+    {project.name}
+  </h3>
+  <p className="text-white text-base md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 md:-translate-y-4 md:group-hover:translate-y-0 mt-2">
+    {project.description_short}
+  </p>
+</div>
                             </div>
                         </div>
                     </div>
@@ -109,7 +119,11 @@ const ProjectsCarousel: React.FC = () => {
                 open={open}
                 close={() => setOpen(false)}
                 slides={projectImages}
-                plugins={[Thumbnails]}
+                index={photoIndex}
+                plugins={[Slideshow, Thumbnails, Zoom]}
+                // A propriedade 'slideshow' foi removida para desativar o autoplay
+                zoom={{ maxZoomPixelRatio: 2 }}
+                animation={{ fade: 400 }}
             />
         </div>
     );

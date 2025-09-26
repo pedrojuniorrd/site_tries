@@ -12,7 +12,7 @@ const heroImages = [
   '/slides/5.png',
 ];
 
-const SLIDE_DURATION = 6000; // 8 segundos
+const SLIDE_DURATION = 6000;
 
 const HeroSlideshow: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,7 +43,7 @@ const HeroSlideshow: React.FC = () => {
 
         return (
           <div
-            key={src + index} // Usar a key com index para garantir a remontagem
+            key={src + index}
             className={`absolute inset-0 w-full h-full ${
               index !== currentIndex && index !== previousIndex ? 'opacity-0' : ''
             }`}
@@ -62,12 +62,12 @@ const HeroSlideshow: React.FC = () => {
         );
       })}
 
-      {/* Overlay Sutil */}
-      <div className="absolute inset-0 z-10 bg-black/20"></div>
+      {/* Overlay Sutil agora como um gradiente */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/40 to-transparent"></div>
 
-      {/* Texto Flutuante */}
+      {/* Texto Flutuante com o novo estilo */}
       <div className="absolute inset-0 z-20 flex flex-col items-start justify-center text-left p-8 lg:p-16">
-        <h1 className="text-white text-6xl md:text-7xl lg:text-8xl font-dm-serif-display font-light leading-snug bg-zinc-800/40 p-4 inline-block rounded-md">
+        <h1 className="text-white text-6xl md:text-7xl lg:text-8xl font-playfair-display font-light leading-snug">
           <span className="slide-in-initial-state animate-slide-in-right-1">Triés</span>
           <br />
           <span className="slide-in-initial-state animate-slide-in-right-2">Arquitetura</span>

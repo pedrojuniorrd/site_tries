@@ -7,7 +7,10 @@ import { notFound } from 'next/navigation';
 import React, { useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
+
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
 interface ProjectPageProps {
@@ -43,14 +46,14 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
             <div 
               key={index} 
               onClick={() => { setPhotoIndex(index); setOpen(true); }}
-              className="relative w-full aspect-video cursor-pointer"
+              className="relative w-full aspect-video cursor-pointer overflow-hidden rounded-lg shadow-lg"
             >
               <Image
                 src={imgSrc}
                 alt={`${project.name} - Imagem ${index + 1}`}
                 fill
                 style={{ objectFit: 'cover' }}
-                className="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
+                className="transform hover:scale-105 transition-transform duration-300"
               />
             </div>
           ))}
@@ -68,11 +71,10 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
         close={() => setOpen(false)}
         slides={images}
         index={photoIndex}
-        plugins={[Thumbnails]}
-        // Esta é a linha que faz o fundo ser translúcido
-        styles={{
-          
-        }}
+        plugins={[Slideshow, Thumbnails, Zoom]}
+        // A propriedade 'slideshow' foi removida para desativar o autoplay
+        zoom={{ maxZoomPixelRatio: 2 }}
+        animation={{ fade: 400 }}
       />
     </div>
   );
