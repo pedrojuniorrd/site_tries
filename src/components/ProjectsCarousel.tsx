@@ -12,6 +12,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
+
 const NextArrow = (props: CustomArrowProps) => {
     const { className, onClick } = props;
     return (
@@ -86,7 +87,7 @@ const ProjectsCarousel: React.FC = () => {
     return (
         <div className="w-full relative">
             <Slider {...settings}>
-                {featuredProjects.map((project, projectIndex) => (
+                {featuredProjects.map((project) => (
                     <div key={project.id} className="p-4">
                         <div
                             className="group cursor-pointer shadow-lg"
@@ -100,15 +101,15 @@ const ProjectsCarousel: React.FC = () => {
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
-<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent flex flex-col items-start justify-end p-6 md:bg-black/0 md:group-hover:bg-black/20 md:group-hover:bg-gradient-to-t transition-all duration-500">
-  {/* No mobile (padrão) a opacidade é 100. No desktop (md:), começa em 0 e aparece no hover */}
-  <h3 className="text-white text-2xl font-playfair-display md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 md:-translate-y-4 md:group-hover:translate-y-0">
-    {project.name}
-  </h3>
-  <p className="text-white text-base md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 md:-translate-y-4 md:group-hover:translate-y-0 mt-2">
-    {project.description_short}
-  </p>
-</div>
+                                {/* LINHA CORRIGIDA ABAIXO */}
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-gradient-to-t from-black/60 to-transparent transition-all duration-500 flex flex-col items-start justify-end p-6">
+                                    <h3 className="text-white text-2xl font-playfair-display opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-4 group-hover:translate-y-0">
+                                        {project.name}
+                                    </h3>
+                                    <p className="text-white text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-4 group-hover:translate-y-0 mt-2">
+                                        {project.description_short}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -121,7 +122,6 @@ const ProjectsCarousel: React.FC = () => {
                 slides={projectImages}
                 index={photoIndex}
                 plugins={[Slideshow, Thumbnails, Zoom]}
-                // A propriedade 'slideshow' foi removida para desativar o autoplay
                 zoom={{ maxZoomPixelRatio: 2 }}
                 animation={{ fade: 400 }}
             />

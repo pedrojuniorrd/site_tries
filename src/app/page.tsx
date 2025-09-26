@@ -20,9 +20,8 @@ const Home: React.FC = () => {
         <AnimatedSection delay={0.2} animationType="slide-up">
           <ProjectsCarousel />
         </AnimatedSection>
-        <AnimatedSection delay={0.4} animationType="slide-up">
+        {/* <AnimatedSection delay={0.4} animationType="slide-up">
           <div className="mt-16">
-            {/* Botão de Ver Todos os Projetos padronizado para Montserrat e estilo sutil */}
             <Link 
               href="#" 
               className="inline-block px-10 py-5 text-zinc-900 border border-zinc-900 hover:bg-zinc-900 hover:text-white transition-all duration-300 rounded-none text-lg font-montserrat font-light uppercase tracking-widest"
@@ -30,7 +29,7 @@ const Home: React.FC = () => {
               Ver Todos os Projetos
             </Link>
           </div>
-        </AnimatedSection>
+        </AnimatedSection> */}
       </section>
 
       {/* Seção Sobre a Triés Arquitetura com Imagens Corrigidas */}
@@ -40,20 +39,19 @@ const Home: React.FC = () => {
             <h2 className="text-5xl font-playfair-display font-light mb-8 text-zinc-800">Sobre a Triés Arquitetatura</h2>
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto font-montserrat font-light">
               O Triés Arquitetura é composto por uma equipe de arquitetas, que uniram suas experiências e visões para criar projetos que unem estética, funcionalidade e propósito. Atuamos no desenvolvimento de projetos residenciais, comerciais e corporativos, sempre com foco em entender as necessidades de cada cliente e transformar espaços em ambientes únicos.
- Acreditamos no poder do design para valorizar marcas, otimizar experiências e criar ambientes que transmitem bem-estar e conexão. Nossa abordagem é guiada pela filosofia de que a arquitetura deve ir além da estética, focando no bem-estar e na conexão entre as pessoas e o ambiente.
+ Acreditamos no poder do design para valorizar marcas, otimizar experiências e criar ambientes que transmitem bem-estar e conexão. Nossa abordagem é guiada pela filosofia de que a arquitetura deve ir além da estética, focando no bem-estar e na conexão entre as pessoas e o ambiente.
             </p>
           </AnimatedSection>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-zinc-800">
             
             <AnimatedSection delay={0.4} animationType="slide-up">
               <div className="text-center">
-                {/* 1. Div container para criar o círculo perfeito */}
                 <div className="relative h-40 w-40 mx-auto mb-4 rounded-full overflow-hidden shadow-lg">
                   <Image
-                    src="/arquitetas/maria_eduarda.jpg"
+                    src="/arquitetas/maria_eduarda.jpg" // CAMINHO ATUALIZADO
                     alt="Foto de Maria Eduarda"
-                    layout="fill" // 2. 'layout="fill"' faz a imagem preencher a div
-                    className="object-cover" // 3. 'object-cover' impede a distorção da imagem
+                    layout="fill"
+                    className="object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-montserrat font-normal">Maria Eduarda</h3>
@@ -63,10 +61,9 @@ const Home: React.FC = () => {
 
             <AnimatedSection delay={0.6} animationType="slide-up">
               <div className="text-center">
-                {/* Container para a segunda arquiteta */}
                 <div className="relative h-40 w-40 mx-auto mb-4 rounded-full overflow-hidden shadow-lg">
                   <Image
-                    src="/arquitetas/kianny_dutra.jpg"
+                    src="/arquitetas/kianny_dutra.jpg" // CAMINHO ATUALIZADO
                     alt="Foto de Kianny Dutra"
                     layout="fill"
                     className="object-cover"
@@ -79,10 +76,9 @@ const Home: React.FC = () => {
 
             <AnimatedSection delay={0.8} animationType="slide-up">
               <div className="text-center">
-                {/* Container para a terceira arquiteta */}
                 <div className="relative h-40 w-40 mx-auto mb-4 rounded-full overflow-hidden shadow-lg">
                   <Image
-                    src="/arquitetas/sabrina_moura.jpg"
+                    src="/arquitetas/sabrina_moura.jpg" // CAMINHO ATUALIZADO
                     alt="Foto de Sabrina"
                     layout="fill"
                     className="object-cover"
