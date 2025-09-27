@@ -10,8 +10,8 @@ const AboutSection: React.FC = () => {
         <AnimatedSection animationType="slide-left">
           <h2 className="text-5xl font-playfair-display font-light mb-8 text-zinc-800">Sobre a Triés Arquitetura</h2>
           <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto font-montserrat font-light">
-            O Triés Arquitetura possui uma equipe composta por três arquitetas, que uniram suas experiências e visões para criar projetos que aliam  estética, funcionalidade e propósito. Atuamos no desenvolvimento de projetos residenciais, comerciais e corporativos, sempre com foco em entender as necessidades de cada cliente e transformar espaços em ambientes únicos.
-            Acreditamos no poder do design para valorizar marcas, otimizar experiências e criar espaços que transmitem bem-estar e conexão. Nossa abordagem é guiada pela filosofia de que a arquitetura deve ir além da estética, focando no bem-estar e na conexão entre as pessoas e o ambiente.
+            Somos uma equipe composta por três arquitetas, que uniram suas experiências e visões para criar projetos que aliam estética, funcionalidade e propósito. Atuamos no desenvolvimento de projetos residenciais, comerciais e corporativos, sempre com foco em entender as necessidades de cada cliente e transformar espaços em ambientes únicos.
+            Acreditamos no poder do design para valorizar marcas, otimizar experiências e criar espaços que transmitem bem-estar e conexão. Nossa abordagem é guiada pela filosofia de que a arquitetura deve ir além da estética, valorizando a experiência humana e a interação significativa com o espaço.
           </p>
         </AnimatedSection>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-zinc-800">

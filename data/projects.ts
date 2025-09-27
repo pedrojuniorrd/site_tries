@@ -41,7 +41,7 @@ export const projects: Project[] = [
   {
     id: 'carla_coelho',
     name: 'Clínica Florescer',
-    category: 'Interiores',
+    category: 'Comercial',
     description: '',
     description_short: '',
     images: ['/projects/clinica_florescer/1.png', '/projects/clinica_florescer/2.png', '/projects/clinica_florescer/3.png','/projects/clinica_florescer/4.png','/projects/clinica_florescer/5.png','/projects/clinica_florescer/6.png'],
@@ -59,7 +59,7 @@ export const projects: Project[] = [
   {
     id: 'quarto_infantil',
     name: 'Suíte Rosé',
-    category: 'Interiores',
+    category: 'Residencial',
     description: '',
     description_short: '',
     images: ['/projects/quarto_infantil/1.jpg', '/projects/quarto_infantil/2.jpg', '/projects/quarto_infantil/3.jpg','/projects/quarto_infantil/4.jpg','/projects/quarto_infantil/5.jpg'],

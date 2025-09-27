@@ -425,13 +425,46 @@ body {
   transition: transform 0.2s, background-color 0.2s;
 }
 
-/* CORREÇÃO PARA O CARROSSEL DE PROJETOS NO MOBILE */
-@media (max-width: 768px) {
+/* Efeito de foco no slide central (APENAS DESKTOP) */
+@media (min-width: 1024px) {
   .slick-slide {
-    width: 100% !important; /* Garante que cada slide ocupe todo o espaço */
+    transition: all 0.4s ease-in-out;
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+
+  .slick-center {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Esconde as setas por padrão (mobile) */
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* Mostra as setas customizadas no desktop */
+@media (min-width: 1024px) {
+  .slick-prev,
+  .slick-next {
     display: block !important;
   }
-  .slick-track {
-    display: flex !important; /* Mantém o alinhamento dos slides */
-  }
+}
+
+/* Estilo das bolinhas de paginação */
+.slick-dots {
+  bottom: -50px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: #a1a1aa; /* Cor cinza para bolinhas inativas */
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #171717; /* Cor escura para a bolinha ativa */
 }

@@ -10,7 +10,7 @@ interface PreloaderProps {
 const Preloader: React.FC<PreloaderProps> = ({ loading }) => {
   const preloaderClasses = `
     fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white
-    transition-opacity duration-[1500ms] ease-out /* <-- DURAÇÃO AUMENTADA AQUI */
+    transition-opacity duration-[1500ms] ease-out
     ${loading ? 'opacity-100' : 'opacity-0 pointer-events-none'}
   `;
 
@@ -20,9 +20,12 @@ const Preloader: React.FC<PreloaderProps> = ({ loading }) => {
         <div className="absolute h-24 w-24 rounded-full border border-gray-400 animate-pulse-ring"></div>
         <div className="h-16 w-16 rounded-full border border-gray-300"></div>
       </div>
-      <p className="mt-8 text-lg font-light text-gray-600 tracking-widest animate-fade-in-slow">
+      
+      {/* --- CORREÇÃO AQUI --- */}
+      <p className="mt-8 text-lg text-center font-light text-gray-600 tracking-widest animate-fade-in-slow max-w-xs px-4">
         Seja bem-vindo ao Triés Arquitetura
       </p>
+      
     </div>
   );
 };
