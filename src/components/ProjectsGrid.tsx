@@ -12,9 +12,11 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
-import { motion } from 'framer-motion';
+// 1. Importe 'motion' e o tipo 'Variants'
+import { motion, Variants } from 'framer-motion';
 
-const containerVariants = {
+// 2. Adicione o tipo 'Variants' às suas constantes de animação
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -25,7 +27,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
@@ -82,23 +84,23 @@ const ProjectsGrid: React.FC = () => {
                             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
-                        <div 
+                         <div 
                           className="
                             absolute inset-0 flex flex-col items-start justify-end p-4 md:p-6 
-                            bg-gradient-to-t from-black/30 to-transparent  /* <-- MUDANÇA 1: Gradiente mais suave */
+                            bg-gradient-to-t from-black/30 to-transparent
                             transition-opacity duration-500 
                             md:from-black/60 md:opacity-0 md:group-hover:opacity-100
                           "
                         >
                             <h3 className="
-                              text-white text-xl md:text-2xl font-playfair-display drop-shadow-md /* <-- MUDANÇA 2: Sombra mais forte */
+                              text-white text-xl md:text-2xl font-playfair-display drop-shadow-md
                               transition-transform duration-500 
                               md:transform md:translate-y-4 md:group-hover:translate-y-0
                             ">
                                 {project.name}
                             </h3>
                             <p className="
-                              text-white/90 text-sm drop-shadow-md /* <-- MUDANÇA 2: Sombra mais forte */
+                              text-white/90 text-sm drop-shadow-md
                               transition-transform duration-500 delay-100 mt-1 
                               md:transform md:translate-y-4 md:group-hover:translate-y-0
                             ">
