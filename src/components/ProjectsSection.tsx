@@ -8,8 +8,8 @@ const ProjectsSection: React.FC = () => {
     <section id="projetos" className="projects-bg-image py-24">
       <div className="max-w-7xl mx-auto px-4">
         <AnimatedSection animationType="slide-up">
-          <div className="text-center">
-            <h2 className="text-5xl font-playfair-display font-light mb-16">
+          <div className="text-center relative z-10"> {/* Adicionado z-10 para garantir que o texto fique sobre o overlay */}
+            <h2 className="text-5xl font-playfair-display font-light mb-16 text-zinc-800"> {/* Corrigido: adicionada a classe text-zinc-800 */}
               Projetos
             </h2>
           </div>

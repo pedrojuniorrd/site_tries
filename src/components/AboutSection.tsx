@@ -16,7 +16,7 @@ const AboutSection: React.FC = () => {
         </AnimatedSection>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-zinc-800">
           
-          <AnimatedSection delay={0.4} animationType="slide-up">
+          <AnimatedSection delay={0.4} animationType="slide-left">
             <div className="text-center">
               <div className="relative h-40 w-40 mx-auto mb-4 rounded-full overflow-hidden shadow-lg">
                 <Image
@@ -31,7 +31,7 @@ const AboutSection: React.FC = () => {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.6} animationType="slide-up">
+          <AnimatedSection delay={0.6} animationType="slide-left">
             <div className="text-center">
               <div className="relative h-40 w-40 mx-auto mb-4 rounded-full overflow-hidden shadow-lg">
                 <Image
@@ -46,7 +46,7 @@ const AboutSection: React.FC = () => {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.8} animationType="slide-up">
+          <AnimatedSection delay={0.8} animationType="slide-left">
             <div className="text-center">
               <div className="relative h-40 w-40 mx-auto mb-4 rounded-full overflow-hidden shadow-lg">
                 <Image

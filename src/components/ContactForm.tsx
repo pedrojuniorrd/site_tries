@@ -1,19 +1,16 @@
 // src/components/ContactForm.tsx
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import AnimatedSection from './AnimatedSection'; 
 
 const ContactForm: React.FC = () => {
-  // A variável para desabilitar o formulário é mantida.
   const IS_DISABLED = true;
 
   return (
-    // O container agora tem um efeito de vidro fosco (backdrop-blur) e um fundo branco semi-transparente.
     <div className="bg-white/60 backdrop-blur-md p-8 sm:p-12 md:p-16 rounded-lg shadow-xl font-montserrat">
       
-      {/* Título e linha divisória */}
-      <AnimatedSection delay={0.1}>
+      <AnimatedSection delay={0.1} animationType="slide-left">
           <div className="text-center mb-12">
               <h2 className="text-4xl font-playfair-display font-light text-gray-800 mb-3">
                   Entre em Contato
@@ -22,12 +19,10 @@ const ContactForm: React.FC = () => {
           </div>
       </AnimatedSection>
       
-      {/* Formulário com novos estilos para os inputs */}
       <form className={`space-y-8 w-full max-w-2xl mx-auto ${IS_DISABLED ? 'opacity-50' : ''}`}>
           
-          {/* Campos Nome e Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <AnimatedSection delay={0.2}>
+              <AnimatedSection delay={0.2} animationType="slide-left">
                   <div className="relative">
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nome</label>
                       <input
@@ -40,7 +35,7 @@ const ContactForm: React.FC = () => {
                       />
                   </div>
               </AnimatedSection>
-              <AnimatedSection delay={0.3}>
+              <AnimatedSection delay={0.3} animationType="slide-left">
                   <div className="relative">
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
                       <input
@@ -55,8 +50,7 @@ const ContactForm: React.FC = () => {
               </AnimatedSection>
           </div>
           
-          {/* Campo Assunto */}
-          <AnimatedSection delay={0.4}>
+          <AnimatedSection delay={0.4} animationType="slide-left">
               <div className="relative">
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700">Assunto</label>
                   <input
@@ -69,8 +63,7 @@ const ContactForm: React.FC = () => {
               </div>
           </AnimatedSection>
 
-          {/* Campo Mensagem */}
-          <AnimatedSection delay={0.5}>
+          <AnimatedSection delay={0.5} animationType="slide-left">
               <div className="relative">
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700">Mensagem</label>
                   <textarea
@@ -84,8 +77,7 @@ const ContactForm: React.FC = () => {
               </div>
           </AnimatedSection>
 
-          {/* Botão de Envio e Mensagem de Desabilitado */}
-          <AnimatedSection delay={0.6}>
+          <AnimatedSection delay={0.6} animationType="slide-left">
               <div className="pt-4">
                   <button
                       type="submit"

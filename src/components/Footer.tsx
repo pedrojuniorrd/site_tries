@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
                 Fale Conosco
               </h3>
               <p className="text-gray-300 font-light">E-mail: tries.arquitetura@gmail.com</p>
-              <p className="text-gray-300 font-light">Telefone: +55 11 99999-9999</p>
+              <p className="text-gray-300 font-light">Telefone: +55 98 98477-4897</p>
             </div>
 
             {/* Coluna 4: Redes Sociais */}

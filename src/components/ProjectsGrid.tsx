@@ -12,10 +12,8 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
-// 1. Importe 'motion' e o tipo 'Variants'
 import { motion, Variants } from 'framer-motion';
 
-// 2. Adicione o tipo 'Variants' às suas constantes de animação
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -44,7 +42,8 @@ const ProjectsGrid: React.FC = () => {
     const [projectImages, setProjectImages] = useState<{ src: string }[]>([]);
     const [photoIndex, setPhotoIndex] = useState(0);
 
-    const featuredProjects = projects.slice(0, 6);
+    // A linha abaixo foi removida para exibir todos os projetos
+    // const featuredProjects = projects.slice(0, 6);
 
     const openModal = (images: string[]) => {
         setProjectImages(images.map(src => ({ src })));
@@ -70,7 +69,8 @@ const ProjectsGrid: React.FC = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
             >
-                {featuredProjects.map((project, index) => (
+                {/* Alterado de 'featuredProjects' para 'projects' para mapear todos os itens */}
+                {projects.map((project, index) => (
                     <motion.div
                         key={project.id + index}
                         className={`group cursor-pointer relative overflow-hidden rounded-xl shadow-lg ${gridItemClasses[index % gridItemClasses.length]}`}

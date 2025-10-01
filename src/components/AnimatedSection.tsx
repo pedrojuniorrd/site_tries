@@ -2,47 +2,53 @@
 'use client';
 
 import React, { ReactNode } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { motion, Variants } from 'framer-motion';
 
 interface AnimatedSectionProps {
     children: ReactNode;
     delay?: number;
     animationType?: 'fade-in' | 'slide-up' | 'slide-left' | 'slide-right';
-    className?: string; // Propriedade que estava faltando
+    className?: string;
 }
 
-const AnimatedSection: React.FC<AnimatedSectionProps> = ({ 
-    children, 
-    delay = 0, 
-    animationType = 'fade-in', 
-    className = '' // Valor padrão para a nova propriedade
+const animationVariants: Record<string, Variants> = {
+    'fade-in': {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+    },
+    'slide-up': {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 },
+    },
+    'slide-left': { // Anima da esquerda (-50px) para o centro (0)
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0 },
+    },
+    'slide-right': { // Anima da direita (50px) para o centro (0)
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0 },
+    },
+};
+
+const AnimatedSection: React.FC<AnimatedSectionProps> = ({
+    children,
+    delay = 0,
+    animationType = 'fade-in',
+    className = ''
 }) => {
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
-
-    const getAnimationClass = () => {
-        if (!inView) return 'opacity-0';
-        switch (animationType) {
-            case 'slide-up': return 'animate-slide-up';
-            case 'slide-left': return 'animate-slide-left';
-            case 'slide-right': return 'animate-slide-right';
-            default: return 'animate-fade-in';
-        }
-    };
-
-    const delayStyle = {
-        animationDelay: `${delay}s`,
-    };
-
-    // Une as classes passadas via props com as classes de animação
-    const combinedClassName = `${className} ${getAnimationClass()}`;
+    const selectedVariants = animationVariants[animationType] || animationVariants['fade-in'];
 
     return (
-        <div ref={ref} className={combinedClassName} style={delayStyle}>
+        <motion.div
+            className={className}
+            variants={selectedVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.2, delay: delay, ease: 'easeOut' }}
+        >
             {children}
-        </div>
+        </motion.div>
     );
 };
 
