@@ -1,8 +1,11 @@
+// src/components/Footer.tsx
 import React from 'react';
 import Link from 'next/link';
+import { config } from '../data/config'; // 1. Importando a configuração
 
-// Se você estiver usando ícones Feather Icons ou qualquer outra biblioteca de ícones
-// que precise ser renderizada como SVG, você pode adicionar o código do SVG aqui.
+// ... (Ícones SVG permanecem os mesmos) ...
+
+
 const InstagramIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="feather feather-instagram">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -25,24 +28,23 @@ const FacebookIcon = () => (
     </svg>
 );
 
+
 const Footer: React.FC = () => {
     return (
-      // Fundo preto puro
       <footer className="w-full bg-black text-white py-16 font-montserrat">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-sm">
             
-            {/* Coluna 1: Informações da Empresa / Logo */}
             <div>
+              {/* 2. Usando o nome do site dinamicamente */}
               <h3 className="text-xl font-playfair-display font-light mb-6 uppercase border-t border-gray-700 pt-4 tracking-wider">
-                Triés Arquitetura
+                {config.siteName}
               </h3>
               <p className="text-gray-300 font-light leading-relaxed">
-                Excelência em projetos arquitetônicos residenciais e comerciais, transformando visões em realidade.
+                {config.description}
               </p>
             </div>
 
-            {/* Coluna 2: Navegação */}
             <div>
               <h3 className="text-sm font-montserrat font-semibold mb-6 uppercase border-t border-gray-700 pt-4 tracking-widest">
                 Links Rápidos
@@ -55,37 +57,35 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Coluna 3: Contato */}
             <div>
               <h3 className="text-sm font-montserrat font-semibold mb-6 uppercase border-t border-gray-700 pt-4 tracking-widest">
                 Fale Conosco
               </h3>
-              <p className="text-gray-300 font-light">E-mail: tries.arquitetura@gmail.com</p>
-              <p className="text-gray-300 font-light">Telefone: +55 98 98477-4897</p>
+              {/* 3. Usando o email e telefone dinamicamente */}
+              <p className="text-gray-300 font-light">E-mail: {config.contact.email}</p>
+              <p className="text-gray-300 font-light">Telefone: {config.contact.phone}</p>
             </div>
 
-            {/* Coluna 4: Redes Sociais */}
             <div>
               <h3 className="text-sm font-montserrat font-semibold mb-6 uppercase border-t border-gray-700 pt-4 tracking-widest">
                 Mídias Sociais
               </h3>
               <div className="flex space-x-6">
-                <Link href="#" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Instagram">
+                <Link href={config.socialMedia.instagram} className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Instagram">
                   <InstagramIcon />
                 </Link>
-                <Link href="#" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
+                <Link href={config.socialMedia.linkedin} className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
                   <LinkedinIcon />
                 </Link>
-                <Link href="#" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Facebook">
+                <Link href={config.socialMedia.facebook} className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Facebook">
                   <FacebookIcon />
                 </Link>
               </div>
             </div>
           </div>
           
-          {/* Direitos Autorais: Agora com text-gray-500 para maior visibilidade */}
           <div className="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500 text-xs font-light">
-            <p>&copy; {new Date().getFullYear()} Triés Arquitetura. Todos os direitos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} {config.siteName}. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>

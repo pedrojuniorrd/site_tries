@@ -1,6 +1,6 @@
 'use client';
 
-import { projects } from '../../../data/projects';
+import { projects } from '../../data/projects';
 import Image from 'next/image';
 import AnimatedSection from '../../components/AnimatedSection';
 import { notFound } from 'next/navigation';
